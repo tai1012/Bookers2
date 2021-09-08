@@ -1,5 +1,9 @@
 <div>
   <h2>
-    Editing Book
+    Book detail
   </h2>
+  <comment>ここにはedit画面のリンク　deleteのボタン</comment>
+  <% if @book.user == current_user %>
+    <%= link_to'delete', book_path(@book), method: :delete%>
+  <%end %>
 </div>

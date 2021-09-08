@@ -1,11 +1,11 @@
 <h2>User info</h2>
-<% @books.each do |book|%>
+<!--< % @books.each do |book|%>-->
 <div>
   <p>#self_image</p>
-  <p>Name <%= book.user.name %></p>
+  <!--<p>Name < %= book.user.name %></p>-->
   <p>Introduction<#self_introduction></p>
 </div>
-<% end %>
+<!--< % end %>-->
 
 <h2>New Book</h2>
 <%= form_with model:@book, local:true do |f| %>
@@ -17,3 +17,5 @@
   <%= f.submit"Create Book"%>
   </h4>
 <% end %>
+
+
