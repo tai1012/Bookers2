@@ -7,9 +7,14 @@
   <th>Title</th>
   <th>Opinion</th>
   <% @books.each do |book|%>
-  <td class='title'><%= book.title %></td>
-  <td class='body'><%= book.body %></td>
+  <td class='image'>
+      <%= link_to (attachment_image_tag book.user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg"), user_path(book.user)  %>
+    </td>
+    <td class='title'><%= link_to book.title, book_path(book) %></td>
+    <td class='body'><%= book.body %></td>
   <% end %>
+  <!--< % end %>-->
+</div>
 </section>
 
 
