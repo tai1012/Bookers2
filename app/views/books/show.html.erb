@@ -1,9 +1,17 @@
+<%= render'users/user', user: @user %>
+<%= render'books/book', book: @new_book %>
+
 <div>
   <h2>
     Book detail
   </h2>
-  <comment>ここにはedit画面のリンク　deleteのボタン</comment>
-  <% if @book.user == current_user %>
-    <%= link_to'delete', book_path(@book), method: :delete%>
-  <%end %>
+  <!--ここにはedit画面のリンク　deleteのボタン-->
+  <% @books.each do |book|%>
+    <% if @book.user.id == current_user.id %>
+    <td class='title'><%= book.title %></td>
+    <td class='body'><%= book.body %></td>
+    <%= link_to'Edit', edit_book_path(@book.id) %>
+    <%= link_to'Delete', book_path(@book.user.id), :method => :delete%>
+    <% end %>
+  <% end %>
 </div>

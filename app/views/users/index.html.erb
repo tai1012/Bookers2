@@ -1,0 +1,13 @@
+<%= render'users/user', user: @user %>
+<%= render'books/book', book: @new_book %>
+
+<h2>Users</h2>
+
+<section>
+  <th>Image</th>
+  <th>Name</th>
+  <% @users.each do |user| %>
+  <td class='image'><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, format:'jpeg', fallback: "no_image.jpg"%></th>
+  <td class='name'><%= user.name %></th>
+  <% end %>
+</section>

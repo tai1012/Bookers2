@@ -1,21 +1,15 @@
-<h2>User info</h2>
-<!--< % @books.each do |book|%>-->
-<div>
-  <p>#self_image</p>
-  <!--<p>Name < %= book.user.name %></p>-->
-  <p>Introduction<#self_introduction></p>
-</div>
-<!--< % end %>-->
+<%= render'users/user', user: @user %>
+<%= render'books/book', book: @book %>
 
-<h2>New Book</h2>
-<%= form_with model:@book, local:true do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opnion</h4>
-  <%= f.text_area :body %>
-  <h4>
-  <%= f.submit"Create Book"%>
-  </h4>
-<% end %>
+<h2>Books</h2>
+
+<section>
+  <th>Title</th>
+  <th>Opinion</th>
+  <% @books.each do |book|%>
+  <td class='title'><%= book.title %></td>
+  <td class='body'><%= book.body %></td>
+  <% end %>
+</section>
 
 
