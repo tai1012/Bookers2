@@ -24,12 +24,14 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @new_book = Book.new
     @books = Book.all
+    @user = @book.user
   # def show
   #   @books = Book.find(params[:id])
   #   @user = User.find(params[:id])
   #   @book = @user.books
   #   @new_book = Book.new
   end
+  
   def edit
     @book = Book.find(params[:id])
   end

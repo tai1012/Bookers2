@@ -11,7 +11,7 @@
   </div>
   <% @books.each do |book|%>
   <div>
-    <td class='image'><%= link_to (attachment_image_tag book.user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg"), user_path(book.user) %></td>
+    <td class='image'><%= link_to (attachment_image_tag @user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg"), user_path(@user) %></td>
     <td class='title'><%= link_to book.title, book_path(book) %></td>
     <td class='opnion'><%= book.body %></td>
   </div>
