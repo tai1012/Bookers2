@@ -6,12 +6,18 @@
     Book detail
   </h2>
   <!--ここにはedit画面のリンク　deleteのボタン-->
-  <% @books.each do |book|%>
-    <% if @book.user.id == current_user.id %>
-    <td class='title'><%= book.title %></td>
-    <td class='body'><%= book.body %></td>
+  <!--< % @books.each do |book|%>-->
+    <td class='image'>
+      <%= link_to user_path(@book.user) do %>
+      <%= attachment_image_tag @book.user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg" %>
+      <%= @book.user.name %>
+      <% end %>
+    </td>
+    <td class='title'><%= link_to @book.title, book_path(@book) %></td>
+    <td class='body'><%= @book.body %></td>
+    <% if @book.user == current_user%>
     <%= link_to'Edit', edit_book_path(@book.id) %>
     <%= link_to'Delete', book_path(@book.user.id), :method => :delete%>
     <% end %>
-  <% end %>
+  <!--< % end %>-->
 </div>

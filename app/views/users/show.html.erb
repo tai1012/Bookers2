@@ -3,7 +3,7 @@
 
 
 
-<h2>My Books</h2>
+<h2>Books</h2>
 <section>
   <div>
     <th>Title</th>
@@ -11,7 +11,7 @@
   </div>
   <% @books.each do |book|%>
   <div>
-    <td class='image'><%= link_to (attachment_image_tag book.user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg"), user_path(book.user) %></td>
+    <td class='image'><%= link_to (attachment_image_tag book.user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg"), user_path(book.user) %></td>
     <td class='title'><%= link_to book.title, book_path(book) %></td>
     <td class='opnion'><%= book.body %></td>
   </div>
