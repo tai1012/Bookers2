@@ -1,3 +1,5 @@
+<div class="notice"><%= flash[:notice] %></div>
+
 <%= render'users/user', user: @user %>
 <%= render'books/book', book: @new_book %>
 
@@ -17,7 +19,7 @@
     <td class='body'><%= @book.body %></td>
     <% if @book.user == current_user%>
     <%= link_to'Edit', edit_book_path(@book.id) %>
-    <%= link_to'Delete', book_path(@book.user.id), :method => :delete%>
+    <%= link_to'Destroy', book_path(@book.user.id), :method => :delete%>
     <% end %>
   <!--< % end %>-->
 </div>
