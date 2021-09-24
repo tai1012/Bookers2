@@ -1,4 +1,6 @@
-<div class="notice"><%= flash[:notice] %></div>
+<%= render 'layouts/notifications' %>
+
+<div class="notice"></div>
 
 <%= render'users/user', user: @user %>
 <%= render'books/book', book: @new_book %>
