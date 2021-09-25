@@ -2,25 +2,32 @@
 
 <div class="notice"></div>
 
-<%= render'users/user', user: @user %>
-<%= render'books/book', book: @new_book %>
-
-
-
-<h2>Books</h2>
-<section>
-  <div>
-    <th>Title</th>
-    <th>Opinion</th>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+    <%= render'users/user', user: @user %>
+    
+    <%= render'books/book', book: @new_book %>
+    </div>
+    
+    
+    
+    <h2>Books</h2>
+    <section>
+      <div>
+        <th>Title</th>
+        <th>Opinion</th>
+      </div>
+      <% @books.each do |book|%>
+      <div>
+        <td class='image'><%= link_to (attachment_image_tag @user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg"), user_path(@user) %></td>
+        <td class='title'><%= link_to book.title, book_path(book) %></td>
+        <td class='opnion'><%= book.body %></td>
+      </div>
+      <% end %>
+    </section>
   </div>
-  <% @books.each do |book|%>
-  <div>
-    <td class='image'><%= link_to (attachment_image_tag @user, :profile_image, :fill, 30, 30, format: 'jpeg', fallback: "no_image.jpg"), user_path(@user) %></td>
-    <td class='title'><%= link_to book.title, book_path(book) %></td>
-    <td class='opnion'><%= book.body %></td>
-  </div>
-  <% end %>
-</section>
+</div>
 
 
 
