@@ -9,6 +9,6 @@
   <% @users.each do |user| %>
   <td class='image'><%= attachment_image_tag user, :profile_image, :fill, 30, 30, format:'jpeg', fallback: "no_image.jpg"%></th>
   <td class='name'><%= user.name %></th>
-  <td class='show'><%= link_to'show', user_path(user) %></td>
+  <td class='show'><%= link_to'Show', user_path(user) %></td>
   <% end %>
 </section>

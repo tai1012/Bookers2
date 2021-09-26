@@ -7,12 +7,11 @@
       <p>Name <%= user.name %></p>
       <p>Introduction <%= user.introduction %></p>
     </table>
-    <% if user == current_user %>
-    <!--<a class="btn btn outline-secondary btn-block fas fa-user-cog" href='//edit'>-->
-      <%= link_to edit_user_path(user) do %>
-        <button class="btn btn outline-secondary btn-block fas fa-user-cog"></button>
-      <% end %>
+    
+    <%= link_to edit_user_path(user) do %>
+      <button class="btn btn outline-secondary btn-block fas fa-user-cog"></button>
+     
 
     <% end %>
   </div>
-  <!--btn btn-outline-secondary btn-block fas fa-user-cog -->
+  
